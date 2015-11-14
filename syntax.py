@@ -12,10 +12,9 @@ def verbPhrase( transVerb ):
 
 def generate():
   n = noun('smart', 'gorilla')
-  np = ('the', n)
+  np = nounPhrase('the', n)
   vp = verbPhrase('slept')
   s = sentence(np, vp)
   print(s)
 
 generate()
-
