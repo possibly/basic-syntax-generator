@@ -1,20 +1,41 @@
-def sentence( nounPhrase, verbPhrase ):
-  return {'NP': nounPhrase, 'VP': verbPhrase}
+lexicon = {
+  'NP': ['she', 'Fluffy', 'Bob', 'Sally'],
+  'N': ['dog', 'cat', 'women'],
+  'Adj': ['fluffy', 'cute', 'gray'],
+  'Det': ['the', 'this', 'some'],
+  'VP': ['slept', 'barked'],
+  'TV': ['liked', 'devoured'],
+  'DTV': ['gave', 'sent'],
+  'SV': ['thought', 'said'],
+  'P': ['to', 'for', 'with', 'on', 'under'],
+  'Adv': ['carefully','quickly', 'yesterday']
+}
 
-def nounPhrase( determiner, noun ):
-  return {'Det': determiner, 'N': noun}
+def genSentence():
+  return [genNounPhrase(), genVerbPhrase()]
 
-def noun( adjective, noun ):
-  return {'Adj': adjective, 'N': noun}
+def genNounPhrase():
+  noun = genNoun()
+  if ([n for n in lexicon['N'] if noun == n]):
+    print noun
+    determiner = genDeterminer(noun)
+    return [determiner, noun]
+  else:
+    return [noun]
 
-def verbPhrase( transVerb ):
-  return {'TV': transVerb}
+def genVerbPhrase():
+  verb = genVerb()
+  if ([v for v in lexicon['TV'] if verb == v]):
+    return [verb, genNounPhrase()]
+  elif([v for v in lexicon['DTV'] if verb == v]):
+    return [verb, genNounPhrase(), genNounPhrase()]
+  else:
+    return [verb]
 
-def generate():
-  n = noun('smart', 'gorilla')
-  np = nounPhrase('the', n)
-  vp = verbPhrase('slept')
-  s = sentence(np, vp)
-  print(s)
+def genNoun():
+  return 'she'
 
-generate()
+def genVerb():
+  return 'slept'
+
+print genSentence()
