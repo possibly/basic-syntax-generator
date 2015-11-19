@@ -1,4 +1,5 @@
 from random import randint
+from sys import argv
 
 lexicon = {
   'NP': ['she', 'Fluffy', 'Bob', 'Sally', 'Karl', 'Daniella', 'Allie', 'Tyler', 'Sarah'],
@@ -50,4 +51,7 @@ def genVerb(verbType='any'):
 def genDeterminer():
   return lexicon['Det'][randint(0,len(lexicon['Det'])-1)]
 
-print genSentence()
+times = int(argv[1])
+while times > 0:
+  print genSentence()
+  times -= 1
