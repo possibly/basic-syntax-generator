@@ -51,7 +51,11 @@ def genVerb(verbType='any'):
 def genDeterminer():
   return lexicon['Det'][randint(0,len(lexicon['Det'])-1)]
 
-times = int(argv[1])
+times = 1
+try:
+  times = int(argv[1])
+except: None
+
 while times > 0:
   print genSentence()
   times -= 1
