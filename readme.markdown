@@ -3,15 +3,22 @@ My Intro to Linguistics class had a section on syntax and I couldn't resist turn
 
 ##Favorite sentences so far:
 ```
-[['this', 'poopie'], ['liked', ['Daniella']]]
-[['some', 'woman'], ['swallowed', ['the', 'cat']]]
-[['the', 'cat'], ['ate', ['Allie']]]
-[['the', 'dog'], ['devoured', ['the', 'cat']]]
-[['Sarah'], ['gave', ['this', 'cat'], ['the', 'poopie']]]
+the ball ate the ball
+the cat gave some cat the ball
+the ball gave the ball this cat
+Tyler smelled the ball
 ```
+
+##Usage
+`python syntax.py <number> <tree>`
+
+`number`: number of sentences to be generated.
+
+`tree`: literally add the word 'tree' to see the generated syntax structure as a tuple.
+
+Setting neither <number> nor <tree> results in just one sentence being generated.
 
 ##todo
 * Propositionl phrases.
-* Adverbs.
-* Switch from nested arrays to tree structure to syntactical structure representation.
-* Double Object Frame is dorked (ex: [['Allie'], ['sent', ['some', 'woman'], ['she']]]), may be impossible without semantics to fix this.
+* Adverbs, adjectives
+* Semantic model?
