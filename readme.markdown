@@ -1,24 +1,25 @@
 #Basic syntax generation
 My Intro to Linguistics class had a section on syntax and I couldn't resist turning a lot of that simple theory into a quick program that could generate syntacticly correct language.
 
-##Favorite sentences so far:
-```
-the ball ate the ball
-the cat gave some cat the ball
-the ball gave the ball this cat
-Tyler smelled the ball
-```
+Later, on the first day on my Syntax 1 class, I thought of a much more clever way of writing this program.
 
 ##Usage
-`python syntax.py <number> <tree>`
+`python syntax.py` will run the program and give some test outputs.
 
-`number`: number of sentences to be generated.
+The part of the code that provides these outputs are: 
 
-`tree`: literally add the word 'tree' to see the generated syntax structure as a tuple.
+```
+print expand(['S', 'S'])
+#  pitchfork lied 
+#  pig came pitchfork
 
-Setting neither <number> nor <tree> results in just one sentence being generated.
+print expand('S')
+# the pig came pitchfork
 
-##todo
-* Propositionl phrases.
-* Adverbs, adjectives
-* Semantic model?
+print expand(['S', ['NP', 'VP']])
+#the answer came pig
+#the pig
+#lied pitchfork
+```
+
+Add to the lexicon and grammar without having to change the expand() algorithm. Change the expand() algorithm if you want the formatting / output to look different.
