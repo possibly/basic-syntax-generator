@@ -17,9 +17,13 @@ print expand('S')
 # the pig came pitchfork
 
 print expand(['S', ['NP', 'VP']])
-#the answer came pig
-#the pig
-#lied pitchfork
+# the answer came pig
+# the pig
+# lied pitchfork
+
+print expand(['(D)', 'N'])
+#  
+# pitchfork
 ```
 
 Add to the lexicon and grammar without having to change the expand() algorithm. Change the expand() algorithm if you want the formatting / output to look different.

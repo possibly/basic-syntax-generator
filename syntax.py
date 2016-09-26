@@ -19,8 +19,9 @@ def expand(phrase):
       return word_set[randint(0, len(word_set)-1)]
     else:
       return ''
-  elif ('N' in phrase or 'V' in phrase or 'D' in phrase) and ('P' not in phrase):
-      return lexicon[phrase][randint(0, 2)]
+  elif ('N' in phrase or 'V' in phrase or 'D' in phrase) and ('P' not in phrase) and (type(phrase) != list):
+    word_set = lexicon[phrase]
+    return word_set[randint(0, len(word_set)-1)]
   try:
     expandedPhrases = map(expand, PSG[phrase])
     return ' '.join(expandedPhrases)
@@ -37,6 +38,10 @@ print expand('S')
 # the pig came pitchfork
 
 print expand(['S', ['NP', 'VP']])
-#the answer came pig
-#the pig
-#lied pitchfork
+# the answer came pig
+# the pig
+# lied pitchfork
+
+print expand(['(D)', 'N'])
+#  
+# pitchfork
